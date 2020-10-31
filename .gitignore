@@ -1,5 +1,6 @@
 .now
 node_modules
+public
 
 # Environment Variables
 .env
