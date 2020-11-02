@@ -7,7 +7,7 @@ const isAuthenticated = (req, res, next) => {
 		return res.sendStatus(403)
 	}
 	jwt.verify(token, 'parabailarlabambasenecesitaunapocodegracia', (err, decoded) => {
-		const { _id } = decoded
+		const { id: _id } = decoded
 		Users.findOne({ _id }).exec()
 			.then(user => {
 				req.user = user
