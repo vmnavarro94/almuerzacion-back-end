@@ -8,7 +8,7 @@ const router = express.Router()
 
 const signToken = id => {
 	return jwt.sign(({ id }), 'parabailarlabambasenecesitaunapocodegracia', {
-		expiresIn: 60, //1 min for testing purposes
+		expiresIn: 60 * 60 * 24 * 365,
 	})
 }
 
