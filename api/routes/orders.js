@@ -22,7 +22,7 @@ router.post('/', isAuthenticated, (req, res) => {
 		.then(x => res.status(201).send(x))
 })
 
-router.put('/:id', isAuthenticated, hasRole(['admin', 'user']), (req, res) => {
+router.put('/:id', isAuthenticated, (req, res) => {
 	Orders.findOneAndUpdate(req.params.id, req.body)
 		.then(() => res.sendStatus(204))
 })
